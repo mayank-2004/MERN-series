@@ -1,0 +1,31 @@
+.container{
+    max-width: 140rem;
+    padding: 3rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Logo-brand a{
+    text-decoration: none;
+    color: rgb(57, 104, 184);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+ul{
+    display: flex;
+    gap: 2rem
+}
+
+li{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+    color: rgb(57, 104, 184);
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
