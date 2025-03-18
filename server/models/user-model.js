@@ -45,28 +45,11 @@ UserSchema.pre('save', async function (next) {
     }
 });
 
-// What is JWT?
-
-// JSON Web Tokens (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
-
-// JWTs are often used for authentication and authorization in web applications.
-
-// Authentication: Verifying the identity of a user or client.
-
-// Authorization: Determining what actions a user or client is allowed to perform.
-
-// Components of a JWT:
-
-// Header: Contains metadata about the token, such as the type of token and the signing algorithm being used.
-
-// Payload: Contains claims or statements about an entity (typically, the user) and additional data. Common claims include user ID, username, and expiration time.
-
-// Signature: To verify that the sender of the JWT is who it says it is and to ensure that the message wasn't changed along the way, a signature is included.
-
-// json web token - 
-// Tokens, such as JWTs (JSON Web Tokens), are typically not stored in the database along with other user details. Instead, they are issued by the server during the authentication process and then stored on the client-side (e.g., in cookies or local storage) for later use.
-
 // methods ek function h jiski help se hm koi bhi funtion bna skte h. hm in functions ko kisi bhi page ya component me access kr skte h.
+// GenerateToken:  The GenerateToken method is defined on the UserSchema. This method generates a JWT token for the user. The token is generated using the jwt.sign method, which takes the user ID and email as the payload, the JWT_SECRET_KEY as the secret key, and an expiration time of 30 days.
+
+// ComparePassword:  The ComparePassword method is defined on the UserSchema. This method compares the user's password with the password provided as an argument. It uses the bcrypt.compare method to compare the two passwords and returns a boolean value indicating whether they match.
+
 UserSchema.methods.GenerateToken = async function () {
     try {
         return jwt.sign({
