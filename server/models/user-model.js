@@ -29,10 +29,11 @@ const UserSchema = new mongoose.Schema({
 // During Password Hashing:  The pre middleware is defined within the userSchema before creating the User model. This ensures that the middleware is properly applied to user documents before they are saved to the database.
 
 UserSchema.pre('save', async function (next) {
-    // console.log("pre method",this)
+    // console.log("pre method",this) // this is the user object
     const user = this;
 
-    if (!user.isModified('password')) {
+    // isModified() method is used to check if the password field has been modified. If the password field has not been modified, the function calls the next middleware in the stack. If the password field has been modified, the function generates a salt using the bcrypt.genSalt method and then hashes the password using the bcrypt.hash method. The hashed password is then assigned to the user object.
+    if (!user.isModified('password')) { 
         next()
     }
 
