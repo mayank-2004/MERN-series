@@ -28,7 +28,7 @@ const App = () =>{
           <Route path="/login" element={<Login />}/>
           <Route path="/logout" element={<Logout />}/>
           <Route path="*" element={<Error />}/>
-          {/* yh nested routes h, isme andr wale routes me slash dalne ki zrurt nni hoti. parent route apne aap include krleta h. */}
+          {/* yh nested routes h, isme andr wale routes me slash dalne ki zrurt nhi hoti. parent route apne aap include krleta h. */}
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="users" element={<AdminUsers />}/>
             <Route path="contacts" element={<AdminContacts />}/>

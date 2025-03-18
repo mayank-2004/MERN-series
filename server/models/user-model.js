@@ -66,6 +66,7 @@ UserSchema.pre('save', async function (next) {
 // json web token - 
 // Tokens, such as JWTs (JSON Web Tokens), are typically not stored in the database along with other user details. Instead, they are issued by the server during the authentication process and then stored on the client-side (e.g., in cookies or local storage) for later use.
 
+// methods ek function h jiski help se hm koi bhi funtion bna skte h. hm in functions ko kisi bhi page ya component me access kr skte h.
 UserSchema.methods.GenerateToken = async function () {
     try {
         return jwt.sign({
